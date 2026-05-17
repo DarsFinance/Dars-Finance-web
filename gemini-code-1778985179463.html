@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DARS Finance | Bitcoin Sovereignty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;700&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange-accent: #f97316;
+      --bg-deep: #020617;
+    }
+    body { font-family: 'Syne', sans-serif; background-color: var(--bg-deep); color: #e2e8f0; }
+    .mono { font-family: 'IBM Plex Mono', monospace; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); }
+  </style>
+</head>
+<body class="selection:bg-orange-500/30">
+
+  <nav class="fixed w-full z-50 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="text-2xl font-bold tracking-tighter text-white uppercase">DARS</div>
+      
+      <div class="hidden md:flex items-center space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium text-gray-400">
+        <a href="#protocolo" class="hover:text-white transition">Protocolo</a>
+        <a href="#articulos" class="hover:text-white transition">Artículos</a>
+        <a href="#contacto" class="hover:text-white transition text-orange-500">Contacto</a>
+        <a href="#waitlist" class="bg-white text-black px-5 py-2 hover:bg-orange-500 hover:text-white transition">Acceso Beta</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="relative min-h-screen flex items-center justify-center pt-20 px-6">
+    <div class="max-w-4xl text-center">
+      <h1 class="text-5xl md:text-8xl font-light text-white leading-none mb-8">
+        LIQUIDEZ SIN <br> <span class="font-bold italic">VENDER</span> BITCOIN
+      </h1>
+      <p class="text-gray-400 max-w-xl mx-auto text-lg mb-12 font-light">
+        Préstamos P2P con custodia Multisig 2-de-3. Mantén la soberanía de tus activos mientras accedes a capital inmediato.
+      </p>
+      <a href="#waitlist" class="inline-block border border-white/20 px-12 py-5 hover:bg-white hover:text-black transition uppercase tracking-widest text-xs">
+        Explorar Protocolo
+      </a>
+    </div>
+  </section>
+
+  <section id="articulos" class="py-32 px-6 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold mb-16 uppercase tracking-tighter italic text-white">Educación Bitcoin</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="group cursor-pointer">
+          <div class="h-64 bg-white/5 mb-6 overflow-hidden border border-white/10">
+            <div class="w-full h-full bg-orange-500/10 group-hover:scale-105 transition duration-500"></div>
+          </div>
+          <span class="mono text-[10px] text-orange-500 uppercase tracking-widest">Guía Técnica</span>
+          <h3 class="text-xl mt-2 group-hover:text-orange-500 transition">Entendiendo la custodia Multisig 2-de-3</h3>
+        </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="waitlist" class="py-32 px-6 glass">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4 uppercase italic">Únete a la Lista</h2>
+        <p class="text-gray-400 font-light">Recibe acceso prioritario a la plataforma Beta.</p>
+      </div>
+
+      <form name="waitlist-dars" method="POST" data-netlify="true" action="mailto:social@darsfinance.com" class="space-y-6">
+        <input type="hidden" name="form-name" value="waitlist-dars">
+        <div class="grid md:grid-cols-2 gap-6">
+          <input type="text" name="name" placeholder="NOMBRE" required class="w-full bg-white/5 border border-white/10 px-6 py-4 focus:outline-none focus:border-orange-500 mono text-sm">
+          <input type="email" name="email" placeholder="EMAIL" required class="w-full bg-white/5 border border-white/10 px-6 py-4 focus:outline-none focus:border-orange-500 mono text-sm">
+        </div>
+        <textarea name="comentario" rows="4" placeholder="¿TIENES ALGUNA PREGUNTA O COMENTARIO?" class="w-full bg-white/5 border border-white/10 px-6 py-4 focus:outline-none focus:border-orange-500 mono text-sm"></textarea>
+        <button type="submit" class="w-full bg-white text-black py-5 font-bold uppercase tracking-widest hover:bg-orange-500 hover:text-white transition">
+          Enviar Registro
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contacto" class="py-32 px-6 border-t border-white/5 text-center">
+    <h2 class="text-3xl font-bold mb-8 uppercase italic text-white">Contacto</h2>
+    <p class="text-gray-400 mb-4 font-light">Para consultas institucionales o soporte técnico:</p>
+    <a href="mailto:business@darsfinance.com" class="text-2xl md:text-4xl font-bold text-orange-500 hover:text-white transition mono">
+      business@darsfinance.com
+    </a>
+  </section>
+
+  <footer class="py-12 border-t border-white/5 px-6 text-center">
+    <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center opacity-40 text-[10px] mono uppercase tracking-[0.3em]">
+      <p>© 2026 DARS FINANCE</p>
+      <div class="flex space-x-8 mt-6 md:mt-0">
+        <a href="#articulos" class="hover:text-orange-500">Artículos</a>
+        <a href="#contacto" class="hover:text-orange-500">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
