@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DARS Finance | Bitcoin Sovereignty</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;700&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange-accent: #f97316;
+      --blue-accent: #f97316;
+      --bg-deep: #020617;
+      --bg-mid: #0f172a;
+    }
+    /* ... Conservo todos tus estilos originales intactos ... */
+    body { font-family: 'Syne', sans-serif; background-color: var(--bg-deep); color: #e2e8f0; }
+    .mono { font-family: 'IBM Plex Mono', monospace; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); }
+    .nav-link-hover { position: relative; }
+    .nav-link-hover::after {
+      content: ''; position: absolute; width: 0; height: 1px; bottom: -4px; left: 0;
+      background-color: var(--orange-accent); transition: width 0.3s ease;
+    }
+    .nav-link-hover:hover::after { width: 100%; }
+    #mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77,0,0.175,1); }
+    #mobile-menu.open { transform: translateX(0); }
+    .hamburger span { transition: all 0.3s ease; }
+    .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  </style>
+</head>
+<body class="selection:bg-orange-500/30 overflow-x-hidden">
+
+  <nav class="fixed w-full z-50 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <div class="text-3xl font-bold tracking-tighter text-white uppercase italic">DARS</div>
+        <div class="hidden md:block h-8 w-[1px] bg-white/10 mx-4"></div>
+        </div>
+      
+      <div class="hidden md:flex items-center space-x-10 text-[11px] uppercase tracking-[0.3em] font-medium text-gray-400">
+        <a href="#protocolo" class="nav-link-hover hover:text-white transition">Protocolo</a>
+        <a href="#articulos" class="nav-link-hover hover:text-white transition">Artículos</a>
+        <a href="#riesgo" class="nav-link-hover hover:text-white transition">Riesgo</a>
+        <a href="#legal" class="nav-link-hover hover:text-white transition">Legal</a>
+        <a href="#contacto" class="nav-link-hover text-orange-500 transition">Contacto</a>
+      </div>
+
+      <button id="hamburger-btn" class="md:hidden flex flex-col space-y-1.5 z-50 hamburger">
+        <span class="w-8 h-[2px] bg-white"></span>
+        <span class="w-8 h-[2px] bg-white"></span>
+        <span class="w-8 h-[2px] bg-white"></span>
+      </button>
+    </div>
+  </nav>
+
+  <section id="articulos" class="py-32 px-6 border-b border-white/5">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-4xl font-bold mb-12 uppercase italic text-white">Artículos</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="glass p-8 border border-white/10 hover:border-orange-500/50 transition cursor-pointer">
+          <span class="mono text-orange-500 text-xs uppercase tracking-widest">Próximamente</span>
+          <h3 class="text-2xl font-bold mt-4 mb-4 uppercase">La importancia de la custodia 2-de-3</h3>
+          <p class="text-gray-400 font-light">Educación sobre la seguridad de tus llaves privadas y el protocolo DARS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="waitlist" class="py-32 px-6 relative overflow-hidden">
+    <div class="max-w-3xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 uppercase italic tracking-tighter">Únete a la Lista</h2>
+        <p class="text-gray-400 text-lg font-light">Acceso prioritario y actualizaciones del protocolo.</p>
+      </div>
+
+      <div id="form-success" class="hidden glass p-12 text-center border border-orange-500/30">
+        <h3 class="text-2xl font-bold text-white mb-2 uppercase">¡Registro Recibido!</h3>
+        <p class="text-gray-400 mono">Nos pondremos en contacto pronto.</p>
+      </div>
+
+      <form id="waitlist-form" name="waitlist" method="POST" data-netlify="true" action="mailto:social@darsfinance.com" class="space-y-6">
+        <input type="hidden" name="form-name" value="waitlist">
+        <div class="grid md:grid-cols-2 gap-6">
+          <input type="text" name="name" placeholder="TU NOMBRE" required class="w-full bg-white/5 border border-white/10 px-8 py-5 focus:outline-none focus:border-orange-500 transition mono text-sm">
+          <input type="email" name="email" placeholder="TU EMAIL" required class="w-full bg-white/5 border border-white/10 px-8 py-5 focus:outline-none focus:border-orange-500 transition mono text-sm">
+        </div>
+        <textarea name="mensaje" placeholder="COMENTARIO O PREGUNTA" rows="4" class="w-full bg-white/5 border border-white/10 px-8 py-5 focus:outline-none focus:border-orange-500 transition mono text-sm"></textarea>
+        <button type="submit" class="w-full bg-white text-black py-6 font-bold uppercase tracking-[0.3em] hover:bg-orange-500 hover:text-white transition duration-500 text-sm">
+          Solicitar Acceso Beta
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer id="contacto" class="py-24 px-6 border-t border-white/5 relative">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-white mb-8 uppercase italic">Contacto</h2>
+      <a href="mailto:business@darsfinance.com" class="text-2xl md:text-5xl font-bold text-orange-500 hover:text-white transition-colors duration-500 mono lowercase mb-16 block">
+        business@darsfinance.com
+      </a>
+      
+      <div class="flex flex-col md:flex-row justify-between items-center pt-16 border-t border-white/5 text-[10px] mono uppercase tracking-[0.4em] text-gray-500">
+        <p>© 2026 DARS FINANCE</p>
+        <div class="flex space-x-8 mt-8 md:mt-0">
+          <a href="#articulos" class="hover:text-gray-400 transition">Artículos</a>
+          <a href="#riesgo" class="hover:text-gray-400 transition">Riesgo</a>
+          <a href="#legal" class="hover:text-gray-400 transition">Legal</a>
+          <a href="#contacto" class="hover:text-gray-400 transition">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+    // ... resto de tu lógica original de envío de formulario ...
+  </script>
+</body>
+</html>
